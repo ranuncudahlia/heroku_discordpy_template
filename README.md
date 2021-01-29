@@ -173,7 +173,8 @@ bot = commands.Bot() # this is what I have the bot shorthanded as
 @bot.event # make sure this is an event, not a command; if you already have on_ready currently, make sure to append the new code onto it, not create a new one
 async def on_ready():
     channel = bot.get_channel(channel_ID_here) # the channel to post in; replace channel_ID_here with your desired channel
-    await channel.send("<@user_ID_here> Bot is now online.") # send a message in the specified channel that pings the specified userID with the message. replace user_ID_here with your id. you MUST leave @ at the front and wrap it in <>
+    await channel.send("<@user_ID_here> Bot is now online.") # send a message in the specified channel that pings the specified userID with the message
+    # replace user_ID_here with your id. you MUST leave @ at the front and wrap it in <>
 ```
 
 #### GitHub Student Developer Pack partnership with Heroku
