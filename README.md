@@ -1,7 +1,7 @@
 # Instructions
 A template for loading a bot made in DiscordPy to Heroku. This also includes the instructions for how to set up your Heroku bot with basic deployment, no add-ons etc.
 
-## 0. Table of Contents
+### 0. Table of Contents
 1. Repository Directory
 2. About Heroku
 3. Deployment
@@ -83,7 +83,7 @@ Click the edit/pencil button, then toggle the switch so that our worker is enabl
 If you view your Discord bot in your server, you should now see that it is online. You may now edit/replace/etc your files as desired in the repository.
 
 ### 4. Detailed File Exaplanaitions (Procfile, requirements.txt, runtime.txt)
-#### Procfile
+#### **Procfile**
 The Procfile defines our dyno, which is what keeps our bot running. Specifically, we are using a worker dyno; there are multiple other types that you can utilize if you are so inclined to do so. You can read more about Heroku's dynos [here](https://www.heroku.com/dynos), as well as pricing and descriptions of other dyno types.
 
 An important note! Worker dynos run 24/7 if there is no Web dyno, which we did not deploy. This means that they are utilizing your account's free dyno hours 24/7. Free accounts by default have 550 hours per month. If you verify your account with a credit/debit card (no charge), this limit is increased to 1000 hours a month. Assuming you are going to want your bot to run at all times, you'll need a max of 744 hours a month (24 hours a day x 31 days in a month). Verifying your account means you will be able to run your bot for free without running out of hours, which is a good option if you are trying to avoid paying for hosting costs. However, be warned: some banks require that verifications use an actual monetary hold of at least $1.00 (USD) to verify your account. This is on a bank per bank basis and is not something Heroku has control over, so be aware that it may occur if you choose to do so. For more information about account verification, [here's Heroku's article about it](https://devcenter.heroku.com/articles/account-verification).
