@@ -7,6 +7,7 @@ A template for loading a bot made in DiscordPy to Heroku. This also includes the
 3. Deployment
 4. Detailed File Exaplanaitions (Procfile, requirements.txt, runtime.txt)
 5. Additional Information (Postgres, Console access & logging, misc. tips)
+6. Credits
 
 ## 1. Repository Directory
 * bot (folder): the folder for the python files. the Procfile designates this folder and reads "bot.py" so if you rename this folder or elect not to use it, ensure you update the Procfile as well
@@ -62,19 +63,33 @@ Select your deploy branch under manual deploy. By default, it will be the main b
 > **Installing \<*python version here*\>**
 > 
 > Installing pip 20.1.1, setuptools 47.1.1 and wheel 0.34.2
+> 
 > Installing SQLite3
+> 
 > Installing requirements with pip
+> 
 >    Collecting discord.py
+> 
 >      **Downloading discord.py-1.6.0-py3-none-any.whl (779 kB)**
+> 
 >    *\[redacted to save space\]*
+> 
 >    Installing collected packages: attrs, chardet, multidict, async-timeout, idna, typing-extensions, yarl, idna-ssl, aiohttp, **discord.py**
+> 
 >    Successfully installed aiohttp-3.7.3 async-timeout-3.0.1 attrs-20.3.0 chardet-3.0.4 **discord.py-1.6.0** idna-3.1 idna-ssl-1.1.0 multidict-5.1.0 typing-extensions-3.7.4.3 yarl-1.6.3
+> 
 > Discovering process types
+> 
 >    **Procfile declares types -> worker**
+> 
 > Compressing...
+> 
 >    Done: 41.4M
+> 
 > Launching...
+> 
 >    Released v3
+> 
 >    **\<*link to your bot's webapp here*\> deployed to Heroku**
 
 #### 4. Finalize Deployment
@@ -185,3 +200,8 @@ If you are a student currently attending college/any other degree giving program
 You can read more about Heroku's side of the partnership [here](https://www.heroku.com/github-students).
 
 *(The GitHub student pack is also worth looking into just in general if you meet the eligibility, as it comes with a significant amount of development & coding resources in all flavors.)*
+
+### 6. Credits
+[Discord.py](https://discordpy.readthedocs.io/en/latest/index.html) created by [Rapptz](https://github.com/Rapptz)
+
+Instructions & template, as well as any code within created by [Kendall Churchil](https://github.com/ranuncudahlia)
