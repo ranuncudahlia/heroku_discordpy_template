@@ -1,7 +1,7 @@
 # Instructions
 A template for loading a bot made in DiscordPy to Heroku. This also includes the instructions for how to set up your Heroku bot with basic deployment, no add-ons etc.
 
-### 0. Table of Contents
+## 0. Table of Contents
 1. Repository Directory
 2. About Heroku
 3. Deployment
