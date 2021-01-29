@@ -34,21 +34,21 @@ We're going to assume you've already setup your bot profile, but if you haven't,
 
 We're going to setup our Heroku account first. Before you do so, make sure you have already cloned this template to your account and have named your repository accordingly. You do not yet need your .py file(s) to be uploaded to the repository; it will build succesfully following all of these steps.
 
-###### 1. Create your account & app
+##### 1. Create your account & app
 Create your account [here](https://signup.heroku.com/). If you've already created an account, login to it. Note that free accounts can only have 1 active app at any time.
 
 On your dashboard, you will create a new app. Name it whatever you want, so long as you are able to remember it and won't mind possibly writing it out as needed in the future using the console.
 
 It will bring you to the deloy page, but leave this alone for now; we will come back to it later.
 
-###### 2. Configure necessary settings.
+##### 2. Configure necessary settings.
 While not *required* to deploy your app, I ***strongly encourage*** you to use Heroku's config variables in order to protect your bot's token key by not including it explicitly in your code. The commands you will need to include in your .py file are included in this template under bot/bot.py, with comments to indicate the purpose of each command.
 
 To configure the environment variables, go to the Settings tab, then Reveal Config Vars. You'll add your bot's token key here. Our template uses the name DISCORD_BOT_TOKEN, but you can use whatever, so long as you make sure to use the correct name in your code.
 
 Make note of this page, because this is the same page that will display your bot's buildpack, which you'll need to refer to in order to troubleshoot any buildpack errors *or* if you are using/updating a different version.
 
-###### 3. Link to GitHub & Configure Initial Deployment
+##### 3. Link to GitHub & Configure Initial Deployment
 Back at the Deploy tab, under Deployment Method select GitHub. Connect your GitHub account to Heroku. If you decide you want to revoke this access, you can do so on GitHub's end in your repository's settings, under Webhooks.
 
 When you have successfully connected to GitHub, you'll be prompted to search your repository name. Note that it will work even if your repository is private.
@@ -75,7 +75,7 @@ Select your deploy branch under manual deploy. By default, it will be the main b
 >    Released v3
 >    **\<*link to your bot's webapp here*\> deployed to Heroku**
 
-###### 4. Finalize Deployment
+##### 4. Finalize Deployment
 Once your build is successful, nagivate to your Resources tab. You should have your worker which states what is in your Procfile. If you are using the template, this will be `worker python bot/bot.py`.
 
 Click the edit/pencil button, then toggle the switch so that our worker is enabled and online. Make sure to click Confirm.
@@ -146,7 +146,7 @@ This is *especially* critical since you are not able to access, create, or store
 #### Miscellaneous Tips
 This section may be updated in the future. These are additional tips and information I've found useful in the process of developing and deploying multiple bots using Heroku.
 
-######## Using timed status messages
+##### Using timed status messages
 Let's say you want your bot to do that cool thing that you see other bots doing all the time: change its status message every X amount of time. Heroku is a little funky with how it processes this. Very large numbers, such as 15 minutes, will have either long delays or fail to run completely. (*On the free/hobby plans, at least. I have not tested this on higher tiers and don't plan to.*)
 
 You'll want to make sure to limit your rotations to a smaller number, such as 1-5 minutes. I recommend setting your timer by using the asyncio package.
@@ -155,7 +155,7 @@ You'll want to make sure to limit your rotations to a smaller number, such as 1-
 ## your status message code here
 await asyncio.sleep(n) ## n = the length of time to wait in seconds
 ```
-######## Alerting you/a specific channel when online
+##### Alerting you/a specific channel when online
 Maybe you want to be notified whenever the daily refresh occurs. Maybe you want to know when the bot comes online after a deployment. Maybe you're monitoring how long deployments take. Maybe you don't test your code before deploying and want to know when it's online so you can test it.
 
 The hard way, but also the way built in to Heroku, is to use the Heroku CLI to monitor the logs of your bot. The easier way would be to program your bot on_ready to message a specific channel, such as a channel in your testing or support server. You'll need the target channel's ID, and if you are pinging someone (such as yourself), the user ID as well. It's up to you if you'd like to utilize a Heroku environment variable or not; I've had issues with it working in the past, and I don't find it particularly unsecure, since in order to post to a channel & ping a user, the bot/script in question would need to already have access to that channel and user anyway. You'll want to exercise a little more caution if this is in a support channel that anyone can join; I find that the best use case scenario is simply in a private channel which only you/your staff/etc have access to, or in a private server for development purposes.
@@ -176,7 +176,7 @@ async def on_ready():
     await channel.send("<@user_ID_here> Bot is now online.") # send a message in the specified channel that pings the specified userID with the message. replace user_ID_here with your id. you MUST leave @ at the front and wrap it in <>
 ```
 
-######## GitHub Student Developer Pack partnership with Heroku
+##### GitHub Student Developer Pack partnership with Heroku
 If you are a student currently attending college/any other degree giving program, you can sign up for the [GitHub Student Developer Pack](https://education.github.com/pack), which includes one free hobby dyno up to two years. While the two years comes in the form of enough hobby dyno credits ($168) to last you that span of time, the amount of hobby dyno ($7) is deducted each month, whether or not you've used it. You also are still limited to only 1 hobby dyno. Therefore, before activating this offer, make sure you definitely want to utilize your two years at this point of time, particularly if you are still testing out bots and deciding what you want to do.
 
 You can read more about Heroku's side of the partnership [here](https://www.heroku.com/github-students).
