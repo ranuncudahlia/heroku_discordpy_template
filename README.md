@@ -58,7 +58,9 @@ Once you've selected your repository, you'll configure your deployment settings.
 Select your deploy branch under manual deploy. By default, it will be the main branch. If you are following along with this template clean with no edited code, the deployment process will work successfully. To ensure that everything is deployed correctly, check the build log for these lines (*especially* the items bolded):
 
 > **Python app detected**
+> 
 > **Installing \<*python version here*\>**
+> 
 > Installing pip 20.1.1, setuptools 47.1.1 and wheel 0.34.2
 > Installing SQLite3
 > Installing requirements with pip
